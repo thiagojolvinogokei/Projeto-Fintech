@@ -19,10 +19,10 @@
             <h5 class="mb-0">Estatísticas</h5>
             <button class="btn btn-outline-secondary">⋮</button>
         </div>
-        <div class="d-flex justify-content-center mb-3">
-            <button class="btn btn-outline-primary mx-1">Dia</button>
-            <button class="btn btn-primary mx-1">Mês</button>
-            <button class="btn btn-outline-primary mx-1">Ano</button>
+        <div class="stats-navigation">
+            <button class="active">Dia</button>
+            <button>Mês</button>
+            <button>Ano</button>
         </div>
         <div class="saldo-container">
             <h4>Saldo</h4>
@@ -61,10 +61,17 @@
                 </div>
             </div>
         </div>
-        <div class="suzi-container mt-4">
-            <h5>Pergunte à Suzi</h5>
-            <p class="mb-0">A sua assistente virtual inteligente</p>
-            <button class="btn btn-light mt-3">Como posso organizar minhas finanças?</button>
+        <div class="suzi-container mt-4 p-4 rounded d-flex flex-column flex-md-row align-items-center" style="background-color: #34c3d2;">
+            <div class="image-container me-md-4 mb-3 mb-md-0">
+                <img src="assets/humaans-medium.png" alt="Imagem da Suzi" class="img-fluid" style="max-width: 500px;">
+            </div>
+            <div class="text-container text-white text-center text-md-start">
+                <h5 class="mb-2">Pergunte à Suzi</h5>
+                <p class="mb-3">A sua assistente virtual inteligente</p>
+                <button class="btn btn-custom">
+                    Como posso organizar minhas finanças? 
+                </button>
+            </div>
         </div>
     </div>
 
@@ -99,3 +106,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<script>
+    // Seleciona todos os botões de navegação
+    const navButtons = document.querySelectorAll('.stats-navigation button');
+
+    // Adiciona um evento de clique para cada botão
+    navButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove a classe "active" de todos os botões
+            navButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Adiciona a classe "active" apenas ao botão clicado
+            button.classList.add('active');
+
+            // Atualiza o conteúdo conforme o botão clicado (opcional)
+            const selectedPeriod = button.textContent.trim(); // Obtém o texto do botão
+            updateContent(selectedPeriod); // Chama a função para atualizar o conteúdo
+        });
+    });
+
+    // Função para atualizar o conteúdo (opcional)
+    function updateContent(period) {
+        const saldoContainer = document.querySelector('.saldo-container h2'); // Seleciona o saldo
+        const gastosTitle = document.querySelector('h6'); // Seleciona o título "Seus Gastos"
+
+        // Atualiza o saldo e o título conforme o período
+        if (period === 'Dia') {
+            saldoContainer.textContent = 'R$ 120,00';
+            gastosTitle.textContent = 'Seus Gastos - Hoje';
+        } else if (period === 'Mês') {
+            saldoContainer.textContent = 'R$ 3600,00';
+            gastosTitle.textContent = 'Seus Gastos - Outubro 2024';
+        } else if (period === 'Ano') {
+            saldoContainer.textContent = 'R$ 42.000,00';
+            gastosTitle.textContent = 'Seus Gastos - 2024';
+        }
+    }
+</script>
+
