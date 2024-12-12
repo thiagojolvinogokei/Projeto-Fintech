@@ -1,7 +1,7 @@
 .saldo-container {
     background-color: #34c3d2;
     color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 20px;
     text-align: center;
     margin-bottom: 20px;
@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
-    background-color: #ffffff;
+    background-color: #F2F2F2;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
@@ -29,8 +29,8 @@
 }
 
 .stats-navigation button.active {
-    background-color: #34c3d2;
-    color: white;
+    background-color: #ffffff;
+    color: #34c3d2;
 }
 
 /* .stats-navigation button:hover {
@@ -132,7 +132,7 @@
 
     /* Animação no hover */
     .btn-custom:hover {
-        background: linear-gradient(90deg, #2a9fbf, #34c3d2);
+        background: linear-gradient(90deg, #34c3d2, #2a9fbf);
         transform: translateY(-2px);
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     }
@@ -141,4 +141,10 @@
     .btn-custom:focus {
         outline: none;
         box-shadow: 0 0 0 4px rgba(52, 195, 210, 0.5);
+    }
+
+    .metas-container .metas-porcentagem {
+        color: #34c3d2;
+        font-weight: bold;
+        font-size: 2em;
     }

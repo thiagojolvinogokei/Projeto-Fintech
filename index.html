@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/cards.css">
     <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
 
     </style>
@@ -33,7 +34,7 @@
             <div class="col-12 col-sm-4">
                 <div class="gastos-card">
                     <div class="icon-container">
-                        <img src="https://via.placeholder.com/40?text=🎓" alt="Ícone Faculdade">
+                        <i class="fa-solid fa-school"></i>
                     </div>
                     <h6>R$ 1500,00</h6>
                     <p>Faculdade</p>
@@ -43,7 +44,7 @@
             <div class="col-12 col-sm-4">
                 <div class="gastos-card">
                     <div class="icon-container">
-                        <img src="https://via.placeholder.com/40?text=☕" alt="Ícone Café">
+                        <i class="fa-solid fa-utensils"></i>
                     </div>
                     <h6>R$ 25,00</h6>
                     <p>Cafezinho</p>
@@ -53,15 +54,15 @@
             <div class="col-12 col-sm-4">
                 <div class="gastos-card">
                     <div class="icon-container">
-                        <img src="https://via.placeholder.com/40?text=💻" alt="Ícone Online">
+                        <i class="fas fa-futbol"></i>
                     </div>
                     <h6>R$ 300,00</h6>
-                    <p>Online</p>
-                    <small>Teste</small>
+                    <p>Entretenimento</p>
+                    <small>Ingresso de Futebol</small>
                 </div>
             </div>
         </div>
-        <div class="suzi-container mt-4 p-4 rounded d-flex flex-column flex-md-row align-items-center" style="background-color: #34c3d2;">
+        <div class="suzi-container mt-4 mb-4 p-4 rounded d-flex flex-column flex-md-row align-items-center" style="background-color: #34c3d2;">
             <div class="image-container me-md-4 mb-3 mb-md-0">
                 <img src="assets/humaans-medium.png" alt="Imagem da Suzi" class="img-fluid" style="max-width: 500px;">
             </div>
@@ -71,6 +72,44 @@
                 <button class="btn btn-custom">
                     Como posso organizar minhas finanças? 
                 </button>
+                <p class="mb-3 mt-3">Clique e se surpreenda!</p>
+
+            </div>
+        </div>
+        <h6>Metas</h6>
+        <div class="metas-container row g-3">
+            <div class="col-12 col-sm-4">
+                <div class="gastos-card">
+                    <div class="icon-container">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h6>Carro</h6>
+                    <p>Saldo poupado: <b>R$ 18.000,00</b> </p>
+                    <p>Valor necessário: <b>R$ 20.000,00</b> </p>
+                    <p class="metas-porcentagem">90%</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="gastos-card">
+                    <div class="icon-container">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h6>Viagem</h6>
+                    <p>Saldo poupado: <b>R$ 10.000,00</b> </p>
+                    <p>Valor necessário: <b>R$ 7.000,00</b> </p>
+                    <p class="metas-porcentagem">70%</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="gastos-card">
+                    <div class="icon-container">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h6>Computador</h6>
+                    <p>Saldo poupado: <b>R$ 2.000,00</b> </p>
+                    <p>Valor necessário: <b>R$ 4.000,00</b> </p>
+                    <p class="metas-porcentagem">50%</p>
+                </div>
             </div>
         </div>
     </div>
@@ -78,26 +117,26 @@
     <div class="bottom-nav">
         <div class="nav-item">
             <a href="#" class="active">
-                <div class="nav-icon">🏠</div>
+                <div class="nav-icon"><i class="fa-solid fa-house"></i></div>
                 <div>Home</div>
             </a>
         </div>
         <div class="nav-item">
             <a href="#">
-                <div class="nav-icon">📅</div>
+                <div class="nav-icon"><i class="fa-solid fa-chart-simple"></i></div>
                 <div>Estatísticas</div>
             </a>
         </div>
         <button class="add-button">+</button>
         <div class="nav-item">
             <a href="#">
-                <div class="nav-icon">📊</div>
+                <div class="nav-icon"><i class="fas fa-file"></i></div>
                 <div>Relatórios</div>
             </a>
         </div>
         <div class="nav-item">
             <a href="#">
-                <div class="nav-icon">👤</div>
+                <div class="nav-icon"><i class="fas fa-user"></i></div>
                 <div>Perfil</div>
             </a>
         </div>
@@ -108,30 +147,21 @@
 </html>
 
 <script>
-    // Seleciona todos os botões de navegação
     const navButtons = document.querySelectorAll('.stats-navigation button');
 
-    // Adiciona um evento de clique para cada botão
     navButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove a classe "active" de todos os botões
             navButtons.forEach(btn => btn.classList.remove('active'));
-
-            // Adiciona a classe "active" apenas ao botão clicado
             button.classList.add('active');
-
-            // Atualiza o conteúdo conforme o botão clicado (opcional)
-            const selectedPeriod = button.textContent.trim(); // Obtém o texto do botão
-            updateContent(selectedPeriod); // Chama a função para atualizar o conteúdo
+            const selectedPeriod = button.textContent.trim(); 
+            updateContent(selectedPeriod); 
         });
     });
 
-    // Função para atualizar o conteúdo (opcional)
-    function updateContent(period) {
-        const saldoContainer = document.querySelector('.saldo-container h2'); // Seleciona o saldo
-        const gastosTitle = document.querySelector('h6'); // Seleciona o título "Seus Gastos"
 
-        // Atualiza o saldo e o título conforme o período
+    function updateContent(period) {
+        const saldoContainer = document.querySelector('.saldo-container h2'); 
+        const gastosTitle = document.querySelector('h6'); 
         if (period === 'Dia') {
             saldoContainer.textContent = 'R$ 120,00';
             gastosTitle.textContent = 'Seus Gastos - Hoje';
